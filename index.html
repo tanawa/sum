@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"  content="ยอดบริจาค โครงการพี่ช่วยน้อง เพื่อนช่วยเพื่อน" />
+<meta property="og:description"        content="สรุปยอดบริจาค โครงการ พี่ช่วยน้อง เพื่อนช่วยเพื่อน" />
+<meta property="og:image"              content="" />
+	<style type="text/css">
+		/*@keyframes anima{
+			0%{transform: rotate(0deg);}
+			25%{transform: rotate(8deg);}
+			70%{transform: rotate(-8deg);}
+			100%{transform: rotate(0deg);}
+		}*/
+		@import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
+		body{
+			background-image: url('bg.jpg');
+			background-size: cover;
+			font-family: 'Kanit', sans-serif;
+			background-repeat: no-repeat;
+		}
+		h1{
+			font-size: 50pt;
+		}
+		.logo{
+			position: relative;
+			animation-name: anima;
+			animation-duration: 5s;
+			animation-iteration-count: infinite;
+		}
+		.money{
+			opacity: 0.8;
+			color:#32322C;
+			font-size: 80pt;
+			background:#FFF;
+			padding: 10px 10px;
+			margin-left: 20%;
+			margin-right: 20%;
+			margin-bottom: 0%;
+			margin-top: 3%;
+			border-radius: 90pt;
+		}
+		h4{
+			font-size: 12pt;
+			margin-bottom: 0;
+
+		}
+	</style>
+	<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+</head>
+<body>
+<center>
+	<img src="vihok.png" width="100px"><br>
+	<img src="logo.png" width="300px" class="logo">
+
+
+	<!--<h4>ยอดบริจาค</h4>-->
+	<p class="money" id="sum">10</p>
+	<img src="description.png" width="38%">
+	<!--<h4>ขอ อนุโมทนาบุญกับผู้ใจบุญร่วม สมทบทุนด้วยนะครับ/ค่ะ</h4>
+	<h4>สามารถร่วมสมทบทุนได้ที่ เลขบัญชีกสิกรไทย</h4>
+	<h4>056-1-37442-2 นางสาว กนกวรรณ ดะมาลี</h4>-->
+</center>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAS8FVZdUsHQykpoZEB-uAHRHQYSLPnatg",
+    authDomain: "testmes-2fcf4.firebaseapp.com",
+    databaseURL: "https://testmes-2fcf4.firebaseio.com",
+    projectId: "testmes-2fcf4",
+    storageBucket: "testmes-2fcf4.appspot.com",
+    messagingSenderId: "866846768783",
+    appId: "1:866846768783:web:6ef7269027340cfc"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  ref=firebase.database().ref("sum/sum");
+  ref.on("value",function(snapshot){
+  	document.getElementById("sum").innerHTML=snapshot.val();
+  },function(err){
+
+  });
+</script>
+</body>
+</html>
