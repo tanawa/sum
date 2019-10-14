@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAS8FVZdUsHQykpoZEB-uAHRHQYSLPnatg",
+    authDomain: "testmes-2fcf4.firebaseapp.com",
+    databaseURL: "https://testmes-2fcf4.firebaseio.com",
+    projectId: "testmes-2fcf4",
+    storageBucket: "testmes-2fcf4.appspot.com",
+    messagingSenderId: "866846768783",
+    appId: "1:866846768783:web:6ef7269027340cfc"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  ref=firebase.database().ref("sum");
+  function send(){
+  	ref.child("sum").set(document.getElementById("text").value);
+  	alert("บันทึกข้อมูลเรียบร้อย");
+  }
+</script>
+<style type="text/css">
+	input[type="number"]{
+		border:2px solid #ddd;
+		border-radius:15px;
+		padding: 10px 25px;
+		outline: none;
+	}
+	button{
+		border:2px solid #ddd;
+		border-radius:15px;
+		padding: 10px 25px;
+		outline: none;
+	}
+</style>
+</head>
+<body><br>
+	<center>
+	<img src="logo.png" width="30%"><br><br>
+<input type="number" name="" id="text"><br><br>
+<button onclick="send()">บันทึก</button>
+</center>
+</body>
+</html>
